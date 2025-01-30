@@ -40,23 +40,11 @@
     <nav class="bg-[#FFF9F4] border-2 border-[#111111] md:border-none lg:border-none">
       <div class="navbar bg-base-100 max-w-screen-xl mx-auto bg-[#FFF9F4]">
         <div class="navbar-start">
-          <!-- <div class="dropdown">
-            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
-              </svg>
-            </div>
-            <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-              <li><a>Find a pet</a></li>
-              <li><a>Breeds</a></li>
-              <li><a>Contact us</a></li>
-            </ul>
-          </div> -->
-          <a class="btn btn-ghost text-2xl font-sora"><img class="w-12" src="c1-assets/logo-header.png"
-              alt="Header Logo">
-            <p class="hidden">Browse<span class="text-[#FFDC26]">4</span>Pets</p>
-          </a>
+
+          <div class="flex items-center gap-2">
+            <img class="w-12" src="c1-assets/logo-header.png" alt="Header Logo">
+            <h5 class="hidden md:block text-2xl font-bold">Browse<span class="text-[#FFDC26]">4</span>Pets</h5>
+          </div>
         </div>
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal px-1">
@@ -65,11 +53,17 @@
             <li><a>Contact us</a></li>
           </ul>
         </div>
-        <div class="navbar-end gap-3 md:gap-8">
-          <i class="fa-solid fa-magnifying-glass hidden md:block"></i>
-          <i class="fa-regular fa-bell hidden md:block"></i>
-          <button type="button" class="hidden md:block border-2 border-[#FFDC26] py-2 px-6 rounded-lg">Login</button>
-          <button type="button" class="hidden md:block border-2 bg-[#FFDC26] py-2 px-6 rounded-lg">Register</button>
+        <div class="navbar-end gap-4">
+          <div class="flex gap-4">
+            <i class="fa-solid fa-magnifying-glass hidden md:block cursor-pointer"></i>
+            <i class="fa-regular fa-bell hidden md:block cursor-pointer"></i>
+          </div>
+          <div class="flex gap-3">
+            <button type="button" class="hidden md:block border-2 border-[#FFDC26] py-2 px-6 rounded-lg">Login</button>
+            <button type="button" class="hidden md:block border-2 bg-[#FFDC26] py-2 px-6 rounded-lg">Register</button>
+            <i
+              class="fa-solid fa-bars text-3xl text-black transition duration-500 hover:text-[#867002] md:hidden lg:hidden"></i>
+          </div>
 
         </div>
       </div>
