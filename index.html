@@ -37,10 +37,10 @@
 <body class="font-sora">
   <!-- Header Section -->
   <header>
-    <nav class="bg-[#FFF9F4]">
+    <nav class="bg-[#FFF9F4] border-2 border-[#111111] md:border-none lg:border-none">
       <div class="navbar bg-base-100 max-w-screen-xl mx-auto bg-[#FFF9F4]">
         <div class="navbar-start">
-          <div class="dropdown">
+          <!-- <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
@@ -52,10 +52,11 @@
               <li><a>Breeds</a></li>
               <li><a>Contact us</a></li>
             </ul>
-          </div>
+          </div> -->
           <a class="btn btn-ghost text-2xl font-sora"><img class="w-12" src="c1-assets/logo-header.png"
               alt="Header Logo">
-            Browse<span class="text-[#FFDC26]">4</span>Pets</a>
+            <p class="hidden">Browse<span class="text-[#FFDC26]">4</span>Pets</p>
+          </a>
         </div>
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal px-1">
@@ -64,11 +65,12 @@
             <li><a>Contact us</a></li>
           </ul>
         </div>
-        <div class="navbar-end gap-3 lg:gap-8">
-          <i class="fa-solid fa-magnifying-glass hidden lg:block"></i>
-          <i class="fa-regular fa-bell hidden lg:block"></i>
-          <button type="button" class="border-2 border-[#FFDC26] py-2 px-6 rounded-lg">Login</button>
-          <a class="btn bg-[#FFDC26]">Register</a>
+        <div class="navbar-end gap-3 md:gap-8">
+          <i class="fa-solid fa-magnifying-glass hidden md:block"></i>
+          <i class="fa-regular fa-bell hidden md:block"></i>
+          <button type="button" class="hidden md:block border-2 border-[#FFDC26] py-2 px-6 rounded-lg">Login</button>
+          <button type="button" class="hidden md:block border-2 bg-[#FFDC26] py-2 px-6 rounded-lg">Register</button>
+
         </div>
       </div>
     </nav>
