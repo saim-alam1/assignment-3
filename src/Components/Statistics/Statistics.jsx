@@ -2,7 +2,7 @@ const Statistics = () => {
   return (
     <section className="bg-linear-to-br from-[#632ee3] to-[#9f62f2] w-full h-102.5 flex flex-col items-center justify-center">
       <div className="max-w-360 mx-auto w-full">
-        <h2 className="text-white text-4xl text-center font-bold mb-10">
+        <h2 className="text-white md:text-5xl text-3xl text-center font-bold mb-10">
           Trusted by Millions, Built for You
         </h2>
 
