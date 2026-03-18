@@ -9,21 +9,25 @@ const Statistics = () => {
         <div className="w-full flex items-center justify-around">
           {/* Stats 1 */}
           <div className="text-center text-white space-y-4">
-            <p className="md:text-[16px]">Total Downloads</p>
-            <h4 className="md:text-6xl font-extrabold">29.6M</h4>
-            <p className="text-[16px]">21% more than last month</p>
+            <p className="md:text-[16px] text-[14px]">Total Downloads</p>
+            <h4 className="md:text-6xl text-2xl font-extrabold">29.6M</h4>
+            <p className="md:text-[16px] text-[14px]">
+              21% more than last month
+            </p>
           </div>
           {/* Stats 2 */}
           <div className="text-center text-white space-y-4">
-            <p className="text-[16px]">Total Reviews</p>
-            <h4 className="md:text-6xl font-extrabold">906K</h4>
-            <p className="text-[16px]">46% more than last month</p>
+            <p className="md:text-[16px] text-[14px]">Total Reviews</p>
+            <h4 className="md:text-6xl text-2xl font-extrabold">906K</h4>
+            <p className="md:text-[16px] text-[14px]">
+              46% more than last month
+            </p>
           </div>
           {/* Stats 3 */}
           <div className="text-center text-white space-y-4">
-            <p className="text-[16px]">Active Apps</p>
-            <h4 className="md:text-6xl font-extrabold">132+</h4>
-            <p className="text-[16px]">31 more will Launch</p>
+            <p className="md:text-[16px] text-[14px]">Active Apps</p>
+            <h4 className="md:text-6xl text-2xl font-extrabold">132+</h4>
+            <p className="md:text-[16px] text-[14px]">31 more will Launch</p>
           </div>
         </div>
       </div>
