@@ -1,11 +1,38 @@
+import { Link, NavLink } from "react-router";
+import logo from "../../assets/logo.png";
+
 const Navbar = () => {
   const links = (
     <>
-      <li>
-        <a>Item 1</a>
+      <li className="text-[16px] font-semibold">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `${isActive ? "bg-linear-to-r from-[#632ee3] to-[#9f62f2] bg-clip-text text-transparent underline underline-offset-4" : "text-[#2f2f2f]"}`
+          }
+        >
+          Home
+        </NavLink>
       </li>
-      <li>
-        <a>Item 3</a>
+      <li className="text-[16px] font-semibold">
+        <NavLink
+          to="/apps"
+          className={({ isActive }) =>
+            `${isActive ? "bg-linear-to-r from-[#632ee3] to-[#9f62f2] bg-clip-text text-transparent underline underline-offset-4" : "text-[#2f2f2f]"}`
+          }
+        >
+          Apps
+        </NavLink>
+      </li>
+      <li className="text-[16px] font-semibold">
+        <NavLink
+          to="/installation"
+          className={({ isActive }) =>
+            `${isActive ? "bg-linear-to-r from-[#632ee3] to-[#9f62f2] bg-clip-text text-transparent underline underline-offset-4" : "text-[#2f2f2f]"}`
+          }
+        >
+          Installation
+        </NavLink>
       </li>
     </>
   );
@@ -38,7 +65,15 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <Link
+          to="/"
+          className="btn border-none shadow-none bg-none focus:none text-[16px] font-bold"
+        >
+          <img src={logo} alt="Logo Image" className="w-10" />
+          <span className="bg-linear-to-r from-[#632ee3] to-[#9f62f2] bg-clip-text text-transparent">
+            HERO.IO
+          </span>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
