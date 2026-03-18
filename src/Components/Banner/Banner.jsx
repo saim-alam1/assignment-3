@@ -5,7 +5,7 @@ import { Link } from "react-router";
 
 const Banner = () => {
   return (
-    <section>
+    <section className="max-w-360 mx-auto">
       {/* Text Container */}
       <div className="text-center w-[80%] mx-auto mt-20 mb-10">
         <h1 className="text-5xl font-black text-[#2f2f2f] mb-4">
