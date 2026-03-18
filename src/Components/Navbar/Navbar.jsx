@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router";
 import logo from "../../assets/logo.png";
+import { BsGithub } from "react-icons/bs";
 
 const Navbar = () => {
   const links = (
@@ -79,7 +80,14 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end mr-1.5">
-        <a className="btn">Button</a>
+        <Link
+          to="https://github.com/saim-alam1"
+          target="_blank"
+          className="btn text-white text-[16px] font-semibold border-none shadow-none bg-linear-to-r from-[#632ee3] to-[#9f62f2]"
+        >
+          <BsGithub className="text-xl" />
+          <span>Contribute</span>
+        </Link>
       </div>
     </div>
   );
