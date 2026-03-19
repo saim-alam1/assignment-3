@@ -1,12 +1,12 @@
 import { Link } from "react-router";
 import notFoundImg from "../../../../assets/App-Error.png";
 
-const ErrorElement = () => {
+const AppNotFound = () => {
   return (
-    <div className="max-w-360 mx-auto my-20 h-170 flex flex-col items-center justify-center">
-      <img src={notFoundImg} alt="Route Not Found" />
+    <div className="max-w-360 mx-auto md:my-20 md:h-170 flex flex-col items-center justify-center">
+      <img className="w-11/12" src={notFoundImg} alt="Route Not Found" />
       <div className="space-y-4 text-center mt-10">
-        <h4 className="text-5xl font-semibold text-[#001931]">
+        <h4 className="text-3xl md:text-5xl font-semibold text-[#001931]">
           OPPS!! APP NOT FOUND
         </h4>
         <p className="text-[#627382] text-xl">
@@ -24,4 +24,4 @@ const ErrorElement = () => {
   );
 };
 
-export default ErrorElement;
+export default AppNotFound;

@@ -7,8 +7,8 @@ const AppCard = ({ appData }) => {
 
   return (
     <Link
-      to={`/app-details/${id}`}
-      className="card bg-base-100 h-108.75 w-87 shadow-sm p-4"
+      to={`/app-details/${id}`} // w-87
+      className="card bg-base-100 h-108.75 w-full shadow-sm p-4"
     >
       <figure>
         <img className="h-79 w-full object-cover" src={image} alt="App Image" />
