@@ -2,12 +2,12 @@ import { useLoaderData, useParams } from "react-router";
 import downloadIcon from "../../assets/icon-downloads.png";
 import ratingIcon from "../../assets/icon-ratings.png";
 import reviewIcon from "../../assets/icon-review.png";
+import Chart from "../Chart/Chart";
 
 const AppDetails = () => {
   const { id } = useParams();
   const appsData = useLoaderData();
   const appDetails = appsData.find((app) => app.id === parseInt(id));
-  console.log(appDetails);
   const { title, image, companyName, downloads, ratingAvg, reviews } =
     appDetails;
 
@@ -73,7 +73,11 @@ const AppDetails = () => {
           </button>
         </div>
       </div>
-      <hr className="w-11/12 border-[#00193120] my-7" />
+      <hr className="w-full border-[#00193120] my-7" />
+
+      <div className="w-full">
+        <Chart ratings={appDetails.ratings} />
+      </div>
     </div>
   );
 };
