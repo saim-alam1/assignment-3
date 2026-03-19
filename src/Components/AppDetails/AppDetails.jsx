@@ -8,8 +8,16 @@ const AppDetails = () => {
   const { id } = useParams();
   const appsData = useLoaderData();
   const appDetails = appsData.find((app) => app.id === parseInt(id));
-  const { title, image, companyName, downloads, ratingAvg, reviews } =
-    appDetails;
+  const {
+    title,
+    image,
+    companyName,
+    downloads,
+    ratingAvg,
+    reviews,
+    description,
+  } = appDetails;
+  console.log(appDetails);
 
   return (
     <div className="max-w-360 mx-auto my-20 mb-10 w-full">
@@ -75,8 +83,14 @@ const AppDetails = () => {
       </div>
       <hr className="w-full border-[#00193120] my-7" />
 
-      <div className="w-full">
+      <div className="w-ful">
+        <h4 className="text-2xl font-semibold text-[#001931]">Ratings</h4>
         <Chart ratings={appDetails.ratings} />
+      </div>
+      <hr className="w-full border-[#00193120] my-7" />
+      <div className="space-y-4 mt-10 mb-20">
+        <h4 className="text-2xl font-semibold text-[#001931]">Description</h4>
+        <p className="text-[#627382] text-xl">{description}</p>
       </div>
     </div>
   );

@@ -57,7 +57,6 @@ const margin = {
 };
 
 const Chart = ({ ratings }) => {
-  console.log(ratings);
   return (
     <div className="w-full h-75">
       <ResponsiveContainer width="100%" height="100%">
