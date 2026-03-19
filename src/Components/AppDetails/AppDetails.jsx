@@ -16,8 +16,8 @@ const AppDetails = () => {
     ratingAvg,
     reviews,
     description,
+    size,
   } = appDetails;
-  console.log(appDetails);
 
   return (
     <div className="max-w-360 mx-auto my-20 mb-10 w-full">
@@ -77,7 +77,7 @@ const AppDetails = () => {
             </div>
           </div>
           <button className="btn bg-[#00D390] border-none shadow-none py-6 px-5 text-white text-xl font-semibold mt-8">
-            Install Now (291 MB)
+            Install Now ({size} MB)
           </button>
         </div>
       </div>
