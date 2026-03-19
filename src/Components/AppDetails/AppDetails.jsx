@@ -22,21 +22,21 @@ const AppDetails = () => {
           />
         </div>
         {/* Texts */}
-        <div className="space-y-2 w-full">
-          <h2 className="card-title text-3xl font-bold text-[#001931]">
-            {title}
-          </h2>
-          <p className="text-xl text-[#627382]">
-            Developed by{" "}
-            <span className="bg-linear-to-r from-[#632ee3] to-[#9f62f2] bg-clip-text text-transparent font-semibold">
-              {companyName}
-            </span>
-          </p>
+        <div className="space-y-2 w-full flex flex-col items-center">
+          <div className="text-center md:text-left space-y-2">
+            <h2 className="text-3xl font-bold text-[#001931]">{title}</h2>
+            <p className="text-xl text-[#627382]">
+              Developed by{" "}
+              <span className="bg-linear-to-r from-[#632ee3] to-[#9f62f2] bg-clip-text text-transparent font-semibold">
+                {companyName}
+              </span>
+            </p>
+          </div>
           <hr className="w-full border-[#00193120] my-7" />
           {/* Stats */}
-          <div className="flex items-center gap-14">
+          <div className="flex items-center justify-center md:justify-start gap-8 md:gap-14">
             {/* Download Stats */}
-            <div>
+            <div className="flex flex-col items-center md:items-start space-y-2">
               <img
                 src={downloadIcon}
                 alt="Download Image icon"
@@ -50,7 +50,7 @@ const AppDetails = () => {
               </p>
             </div>
             {/* Ratings Stats */}
-            <div>
+            <div className="flex flex-col items-center md:items-start space-y-2">
               <img src={ratingIcon} alt="Rating Image icon" className="h-10" />
               <p className="text-[16px] mt-2">Average Ratings</p>
               <p className="text-[40px] font-extrabold text-[#001931] mt-0 leading-none">
@@ -58,7 +58,7 @@ const AppDetails = () => {
               </p>
             </div>
             {/* Review Stats */}
-            <div>
+            <div className="flex flex-col items-center md:items-start space-y-2">
               <img src={reviewIcon} alt="Review Image icon" className="h-10" />
               <p className="text-[16px] mt-2">Total Reviews</p>
               <p className="text-[40px] font-extrabold text-[#001931] mt-0 leading-none">
