@@ -13,17 +13,17 @@ const AppDetails = () => {
 
   return (
     <div className="max-w-360 mx-auto my-20 mb-10 w-full">
-      <div className="card lg:card-side flex items-center gap-10 w-full">
-        <div className="shadow-sm drop-shadow-2xl">
+      <div className="card lg:card-side flex items-center gap-10 w-full lg:mx-2.5">
+        <div className="shadow-lg drop-shadow-2xl">
           <img
-            className="h-87.5 w-87.5 rounded-xl object-cover"
+            className="h-87.5 w-87.5 md:w-full rounded-xl object-cover"
             src={image}
             alt={`${title} Image`}
           />
         </div>
         {/* Texts */}
-        <div className="space-y-2 w-full flex flex-col items-center">
-          <div className="text-center md:text-left space-y-2">
+        <div className="space-y-2 w-full flex flex-col items-center lg:items-start">
+          <div className="text-center lg:text-left space-y-2">
             <h2 className="text-3xl font-bold text-[#001931]">{title}</h2>
             <p className="text-xl text-[#627382]">
               Developed by{" "}
@@ -32,11 +32,11 @@ const AppDetails = () => {
               </span>
             </p>
           </div>
-          <hr className="w-full border-[#00193120] my-7" />
+          <hr className="w-11/12 border-[#00193120] my-7" />
           {/* Stats */}
           <div className="flex items-center justify-center md:justify-start gap-8 md:gap-14">
             {/* Download Stats */}
-            <div className="flex flex-col items-center md:items-start space-y-2">
+            <div className="flex flex-col items-center lg:items-start space-y-2">
               <img
                 src={downloadIcon}
                 alt="Download Image icon"
@@ -50,7 +50,7 @@ const AppDetails = () => {
               </p>
             </div>
             {/* Ratings Stats */}
-            <div className="flex flex-col items-center md:items-start space-y-2">
+            <div className="flex flex-col items-center lg:items-start space-y-2">
               <img src={ratingIcon} alt="Rating Image icon" className="h-10" />
               <p className="text-[16px] mt-2">Average Ratings</p>
               <p className="text-[40px] font-extrabold text-[#001931] mt-0 leading-none">
@@ -58,7 +58,7 @@ const AppDetails = () => {
               </p>
             </div>
             {/* Review Stats */}
-            <div className="flex flex-col items-center md:items-start space-y-2">
+            <div className="flex flex-col items-center lg:items-start space-y-2">
               <img src={reviewIcon} alt="Review Image icon" className="h-10" />
               <p className="text-[16px] mt-2">Total Reviews</p>
               <p className="text-[40px] font-extrabold text-[#001931] mt-0 leading-none">
@@ -73,7 +73,7 @@ const AppDetails = () => {
           </button>
         </div>
       </div>
-      <hr className="w-full border-[#00193120] my-7" />
+      <hr className="w-11/12 border-[#00193120] my-7" />
     </div>
   );
 };
