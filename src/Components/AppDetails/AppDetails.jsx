@@ -3,6 +3,12 @@ import downloadIcon from "../../assets/icon-downloads.png";
 import ratingIcon from "../../assets/icon-ratings.png";
 import reviewIcon from "../../assets/icon-review.png";
 import Chart from "../Chart/Chart";
+import {
+  addToLocalStorage,
+  getStoredApp,
+} from "../../Utilities/saveAtLocalStorage";
+import { toast } from "react-toastify";
+import { useEffect, useState } from "react";
 
 const AppDetails = () => {
   const { id } = useParams();
@@ -18,6 +24,23 @@ const AppDetails = () => {
     description,
     size,
   } = appDetails;
+
+  const [alreadyInstalled, setAlreadyInstalled] = useState(false);
+
+  useEffect(() => {
+    const installed = getStoredApp();
+    if (installed.includes(id)) {
+      setAlreadyInstalled(true);
+    }
+  }, [id]);
+
+  const handleInstallApp = (id) => {
+    const installed = addToLocalStorage(id);
+    if (installed) {
+      toast.success(`${title} app installed`);
+      setAlreadyInstalled(true); // reactive update
+    }
+  };
 
   return (
     <div className="max-w-360 mx-auto my-20 mb-10 w-full">
@@ -76,14 +99,18 @@ const AppDetails = () => {
               </p>
             </div>
           </div>
-          <button className="btn bg-[#00D390] border-none shadow-none py-6 px-5 text-white text-xl font-semibold mt-8">
-            Install Now ({size} MB)
+          <button
+            disabled={alreadyInstalled}
+            onClick={() => handleInstallApp(id)}
+            className={`btn border-none shadow-none py-6 px-5 text-white text-xl font-semibold mt-8 ${alreadyInstalled ? "bg-gray-500" : "bg-[#00D390]"}`}
+          >
+            {alreadyInstalled ? "Installed" : `Install Now (${size} MB)`}
           </button>
         </div>
       </div>
       <hr className="w-full border-[#00193120] my-7" />
 
-      <div className="w-ful">
+      <div className="w-full">
         <h4 className="text-2xl font-semibold text-[#001931] text-center lg:text-left lg:mx-2.5">
           Ratings
         </h4>
