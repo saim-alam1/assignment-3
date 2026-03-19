@@ -1,17 +1,18 @@
 import { Link } from "react-router";
-import notFoundImg from "../../../../assets/App-Error.png";
+import errorImg from "../../../../assets/error-404.png";
 
-const AppNotFound = () => {
+const ErrorElement = () => {
   return (
-    <div className="max-w-360 mx-auto md:my-20 md:h-170 flex flex-col items-center justify-center">
-      <img className="w-11/12" src={notFoundImg} alt="Warning Image" />
+    <div className="max-w-360 mx-auto my-20 h-full flex flex-col items-center justify-center">
+      <div className="w-full flex items-center justify-center">
+        <img className="w-11/12" src={errorImg} alt="Route Image" />
+      </div>
       <div className="space-y-4 text-center mt-10">
         <h4 className="text-3xl md:text-5xl font-semibold text-[#001931]">
-          OPPS!! APP NOT FOUND
+          Oops, page not found!
         </h4>
         <p className="text-[#627382] text-xl">
-          The App you are requesting is not found on our system. please try
-          another apps
+          The page you are looking for is not available.
         </p>
       </div>
       <Link
@@ -24,4 +25,4 @@ const AppNotFound = () => {
   );
 };
 
-export default AppNotFound;
+export default ErrorElement;
