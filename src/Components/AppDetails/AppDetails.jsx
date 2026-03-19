@@ -84,13 +84,19 @@ const AppDetails = () => {
       <hr className="w-full border-[#00193120] my-7" />
 
       <div className="w-ful">
-        <h4 className="text-2xl font-semibold text-[#001931]">Ratings</h4>
+        <h4 className="text-2xl font-semibold text-[#001931] text-center lg:text-left lg:mx-2.5">
+          Ratings
+        </h4>
         <Chart ratings={appDetails.ratings} />
       </div>
       <hr className="w-full border-[#00193120] my-7" />
       <div className="space-y-4 mt-10 mb-20">
-        <h4 className="text-2xl font-semibold text-[#001931]">Description</h4>
-        <p className="text-[#627382] text-xl">{description}</p>
+        <h4 className="text-2xl font-semibold text-[#001931] text-center lg:text-left lg:mx-2.5">
+          Description
+        </h4>
+        <p className="text-[#627382] text-xl text-center lg:text-left lg:mx-2.5">
+          {description}
+        </p>
       </div>
     </div>
   );
