@@ -42,7 +42,7 @@ const InstalledAppCard = ({ apps, handleRemoveApp }) => {
         </div>
 
         <button
-          onClick={() => handleRemoveApp(id)}
+          onClick={() => handleRemoveApp(id, title)}
           className="btn border-none shadow-none bg-[#00D390] text-white text-[16px] font-semibold"
         >
           Uninstall

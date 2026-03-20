@@ -6,6 +6,7 @@ import {
 import { TiArrowSortedDown } from "react-icons/ti";
 import InstalledAppCard from "../Shared/InstalledAppCard/InstalledAppCard";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const Installation = () => {
   const appsData = useLoaderData();
@@ -19,13 +20,33 @@ const Installation = () => {
   );
 
   const [installedAppList, setInstalledAppList] = useState(getInstalledApps);
+  const [sort, setSort] = useState("");
 
-  const handleRemoveApp = (id) => {
+  console.log(installedAppList);
+
+  const handleSort = (sortType) => {
+    setSort(sortType);
+
+    const sortedApps = [...installedAppList].sort((a, b) => {
+      if (sortType === "High-Low") {
+        return b.downloads - a.downloads;
+      } else if (sortType === "Low-High") {
+        return a.downloads - b.downloads;
+      } else {
+        return 0;
+      }
+    });
+
+    setInstalledAppList(sortedApps);
+  };
+
+  const handleRemoveApp = (id, title) => {
     removeFromLocalStorage(id);
 
     const remainingApps = installedAppList.filter((app) => app.id !== id);
 
     setInstalledAppList(remainingApps);
+    toast.success(`${title} App  Uninstalled Successfully`);
   };
 
   return (
@@ -48,17 +69,18 @@ const Installation = () => {
             role="button"
             className="btn m-1 text-[#627382] text-[16px]"
           >
-            Sort By Size <TiArrowSortedDown className="text-xl" />
+            Sort By Downloads: {sort ? sort : ""}{" "}
+            <TiArrowSortedDown className="text-xl" />
           </div>
           <ul
             tabIndex="-1"
             className="dropdown-content dropdown-left menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
           >
             <li>
-              <a>Item 1</a>
+              <a onClick={() => handleSort("High-Low")}>High-Low</a>
             </li>
             <li>
-              <a>Item 2</a>
+              <a onClick={() => handleSort("Low-High")}>Low-High</a>
             </li>
           </ul>
         </div>
