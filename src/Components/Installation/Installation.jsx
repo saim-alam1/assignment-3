@@ -1,7 +1,11 @@
 import { useLoaderData } from "react-router";
-import { getStoredApp } from "../../Utilities/saveAtLocalStorage";
+import {
+  getStoredApp,
+  removeFromLocalStorage,
+} from "../../Utilities/saveAtLocalStorage";
 import { TiArrowSortedDown } from "react-icons/ti";
 import InstalledAppCard from "../Shared/InstalledAppCard/InstalledAppCard";
+import { useState } from "react";
 
 const Installation = () => {
   const appsData = useLoaderData();
@@ -13,6 +17,16 @@ const Installation = () => {
   const getInstalledApps = appsData.filter((apps) =>
     convertAppsIdIntoNum.includes(apps.id),
   );
+
+  const [installedAppList, setInstalledAppList] = useState(getInstalledApps);
+
+  const handleRemoveApp = (id) => {
+    removeFromLocalStorage(id);
+
+    const remainingApps = installedAppList.filter((app) => app.id !== id);
+
+    setInstalledAppList(remainingApps);
+  };
 
   return (
     <section className="max-w-360 mx-auto my-20">
@@ -51,8 +65,12 @@ const Installation = () => {
       </div>
 
       <div className="px-3 flex flex-col gap-4">
-        {getInstalledApps.map((apps) => (
-          <InstalledAppCard key={apps.id} apps={apps} />
+        {installedAppList.map((apps) => (
+          <InstalledAppCard
+            key={apps.id}
+            apps={apps}
+            handleRemoveApp={handleRemoveApp}
+          />
         ))}
       </div>
     </section>

@@ -21,4 +21,14 @@ const addToLocalStorage = (id) => {
   }
 };
 
-export { getStoredApp, addToLocalStorage };
+const removeFromLocalStorage = (id) => {
+  const storedAppsData = getStoredApp();
+
+  const remainingApps = storedAppsData.filter(
+    (storedId) => parseInt(storedId) !== parseInt(id),
+  );
+
+  localStorage.setItem("installedApps", JSON.stringify(remainingApps));
+};
+
+export { getStoredApp, addToLocalStorage, removeFromLocalStorage };

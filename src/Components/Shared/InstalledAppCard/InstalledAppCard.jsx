@@ -1,12 +1,8 @@
 import downloadImg from "../../../assets/icon-downloads.png";
 import ratingImg from "../../../assets/icon-ratings.png";
 
-const InstalledAppCard = ({ apps }) => {
+const InstalledAppCard = ({ apps, handleRemoveApp }) => {
   const { id, title, image, downloads, ratingAvg, size } = apps;
-
-  const handleUnInstall = (id) => {
-    console.log(id);
-  };
 
   return (
     <div className="card card-side bg-white shadow-lg">
@@ -24,7 +20,7 @@ const InstalledAppCard = ({ apps }) => {
               {title}
             </h2>
             {/* Stats */}
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col md:flex-row md:items-center gap-4">
               {/* Download */}
               <div className="flex items-center gap-1 text-[16px] font-medium text-[#00D390]">
                 <img className="h-4" src={downloadImg} alt="Downloads Icon" />
@@ -46,7 +42,7 @@ const InstalledAppCard = ({ apps }) => {
         </div>
 
         <button
-          onClick={() => handleUnInstall(id)}
+          onClick={() => handleRemoveApp(id)}
           className="btn border-none shadow-none bg-[#00D390] text-white text-[16px] font-semibold"
         >
           Uninstall
